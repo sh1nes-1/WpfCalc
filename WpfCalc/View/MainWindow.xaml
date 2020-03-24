@@ -86,7 +86,7 @@
                 <Button Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource Digit}"/>
                 <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource Digit}"/>
                 <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource Digit}">
+                <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource Operation}">
                     <Viewbox Width="12" Height="12">
                         <Path 
                             Data="M1.4375 0L0 1.4375L8.78125 10.2188L0 19L1.4375 20.4375L10.2188 11.6563L19 20.4375L20.4375 19L11.6563 10.2188L20.4375 1.4375L19 0L10.2188 8.78125L1.4375 0Z"
@@ -99,7 +99,7 @@
                 <Button Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource Digit}"/>
                 <Button Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource Digit}"/>
                 <Button Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{StaticResource Operation}"/>
 
                 <Button Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource Digit}"/>
                 <Button Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource Digit}"/>
