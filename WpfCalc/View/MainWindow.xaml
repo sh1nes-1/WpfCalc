@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WpfCalc.ViewModel"
+        xmlns:local="clr-namespace:WpfCalc"
+        mc:Ignorable="d"
+        Title="Калькулятор" 
+        Width="320" Height="420" 
+        MinWidth="320" MinHeight="420"
+        Style="{StaticResource WindowStyle}">
+
+    <Window.DataContext>
+        <vm:MainVM/>
+    </Window.DataContext>
+
+    <DockPanel>
+        <Grid Margin="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Vertical" Style="{StaticResource StatusHeader}">
+                <TextBox 
+                    IsEnabled="False" 
+                    Text="1 + 2 = " 
+                    Foreground="#5c5c5c" 
+                    FontFamily="Segoe"
+                    FontSize="16"                     
+                    TextAlignment="Right" 
+                    Background="Transparent" 
+                    BorderThickness="0"
+                    />
+
+                <TextBox 
+                    Text="123456789" 
+                    FontSize="44" 
+                    FontFamily="Segoe"
+                    FontWeight="SemiBold"
+                    TextAlignment="Right" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    IsReadOnly="True" 
+                    IsReadOnlyCaretVisible="False"
+                    />
+            </StackPanel>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Content="%" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="CE" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="C" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource Operation}">
+                    <Viewbox Width="15" Height="15">
+                        <Canvas Width="24" Height="24">
+                            <Path 
+                                Fill="Black" 
+                                Data="M19,15.59L17.59,17L14,13.41L10.41,17L9,15.59L12.59,12L9,8.41L10.41,7L14,10.59L17.59,7L19,8.41L15.41,12L19,15.59M22,3A2,2 0 0,1 24,5V19A2,2 0 0,1 22,21H7C6.31,21 5.77,20.64 5.41,20.11L0,12L5.41,3.88C5.77,3.35 6.31,3 7,3H22M22,5H7L2.28,12L7,19H22V5Z" />
+                        </Canvas>
+                    </Viewbox>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="0" Content="1/x" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="x^2" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="√x" Style="{StaticResource Operation}"/>
+                <Button Grid.Row="1" Grid.Column="3" Content="/" Style="{StaticResource Operation}"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource Digit}">
+                    <Viewbox Width="12" Height="12">
+                        <Path 
+                            Data="M1.4375 0L0 1.4375L8.78125 10.2188L0 19L1.4375 20.4375L10.2188 11.6563L19 20.4375L20.4375 19L11.6563 10.2188L20.4375 1.4375L19 0L10.2188 8.78125L1.4375 0Z"
+                            Stretch="Fill"
+                            Fill="Black"
+                            />
+                    </Viewbox>
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{StaticResource Digit}"/>
+
+                <Button Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="4" Grid.Column="2" Content="3" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="4" Grid.Column="3" Content="+" Style="{StaticResource Operation}"/>
+
+                <Button Grid.Row="5" Grid.Column="0" Content="+/-" Style="{StaticResource NumberSign}"/>
+                <Button Grid.Row="5" Grid.Column="1" Content="0" Style="{StaticResource Digit}"/>
+                <Button Grid.Row="5" Grid.Column="2" Content="," Style="{StaticResource NumberSign}"/>
+                <Button Grid.Row="5" Grid.Column="3" Content="=" Style="{StaticResource Equals}"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
