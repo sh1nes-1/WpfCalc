@@ -32,29 +32,30 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Orientation="Vertical" Style="{StaticResource StatusHeader}">
-                <TextBox 
+                <TextBlock
                     IsEnabled="False" 
                     Text="1 + 2 = " 
                     Foreground="#5c5c5c" 
                     FontFamily="Segoe"
                     FontSize="16"                     
                     TextAlignment="Right" 
-                    Background="Transparent" 
-                    BorderThickness="0"
+                    Background="Transparent"
                     />
 
-                <TextBox 
-                    Text="123456789" 
-                    FontSize="44" 
-                    FontFamily="Segoe"
-                    FontWeight="SemiBold"
-                    TextAlignment="Right" 
-                    Background="Transparent" 
-                    BorderThickness="0" 
-                    IsTabStop="False"
-                    IsReadOnly="True" 
-                    IsReadOnlyCaretVisible="False"
-                    />
+                <Viewbox Height="50" MaxHeight="500" HorizontalAlignment="Right">
+                    <TextBox
+                        Text="{Binding DisplayText}" 
+                        FontSize="46" 
+                        FontFamily="Segoe"
+                        FontWeight="SemiBold"
+                        TextAlignment="Right" 
+                        Background="Transparent" 
+                        BorderThickness="0" 
+                        IsTabStop="False"
+                        IsReadOnly="True" 
+                        IsReadOnlyCaretVisible="False"
+                        />
+                </Viewbox>
             </StackPanel>
 
             <Grid Grid.Row="2">
@@ -92,9 +93,31 @@
                 <Button Grid.Row="1" Grid.Column="2" Content="√x" Style="{StaticResource Operation}"/>
                 <Button Grid.Row="1" Grid.Column="3" Content="/" Style="{StaticResource Operation}"/>
 
-                <Button Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource Digit}"/>
+                <Button 
+                    Grid.Row="2" 
+                    Grid.Column="0"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="7"
+                    Content="7" 
+                    />
+                <Button 
+                    Grid.Row="2" 
+                    Grid.Column="1"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="8"
+                    Content="8" 
+                    />
+                <Button 
+                    Grid.Row="2" 
+                    Grid.Column="2"                      
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="9"                    
+                    Content="9"
+                    />
+                
                 <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource Operation}">
                     <Viewbox Width="12" Height="12">
                         <Path 
@@ -105,18 +128,67 @@
                     </Viewbox>
                 </Button>
 
-                <Button Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource Digit}"/>
+                <Button 
+                    Grid.Row="3" 
+                    Grid.Column="0"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="4" 
+                    Content="4" 
+                    />
+                <Button 
+                    Grid.Row="3" 
+                    Grid.Column="1"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="5" 
+                    Content="5" 
+                    />
+                <Button 
+                    Grid.Row="3" 
+                    Grid.Column="2"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="6" 
+                    Content="6" 
+                    />
                 <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{StaticResource Operation}"/>
 
-                <Button Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource Digit}"/>
-                <Button Grid.Row="4" Grid.Column="2" Content="3" Style="{StaticResource Digit}"/>
+                <Button 
+                    Grid.Row="4" 
+                    Grid.Column="0"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="1" 
+                    Content="1" 
+                    />
+                <Button 
+                    Grid.Row="4" 
+                    Grid.Column="1"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="2"                     
+                    Content="2" 
+                    />
+                <Button 
+                    Grid.Row="4" 
+                    Grid.Column="2"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="3"    
+                    Content="3" 
+                    />
                 <Button Grid.Row="4" Grid.Column="3" Content="+" Style="{StaticResource Operation}"/>
 
                 <Button Grid.Row="5" Grid.Column="0" Content="+/-" Style="{StaticResource NumberSign}"/>
-                <Button Grid.Row="5" Grid.Column="1" Content="0" Style="{StaticResource Digit}"/>
+                <Button 
+                    Grid.Row="5"
+                    Grid.Column="1"                     
+                    Style="{StaticResource Digit}"
+                    Command="{Binding DigitPressEventCommand}"
+                    CommandParameter="0"                      
+                    Content="0" 
+                    />
                 <Button Grid.Row="5" Grid.Column="2" Content="," Style="{StaticResource NumberSign}"/>
                 <Button Grid.Row="5" Grid.Column="3" Content="=" Style="{StaticResource Equals}"/>
             </Grid>
