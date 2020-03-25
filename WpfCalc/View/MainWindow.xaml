@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:WpfCalc.ViewModel"
         xmlns:local="clr-namespace:WpfCalc"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="Калькулятор" 
         Width="320" Height="420" 
@@ -14,6 +16,12 @@
     <Window.DataContext>
         <vm:MainVM/>
     </Window.DataContext>
+
+    <i:Interaction.Triggers >
+        <i:EventTrigger EventName="KeyDown">
+            <prism:InvokeCommandAction Command="{Binding KeyDownEventCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 
     <DockPanel>
         <Grid Margin="4">
@@ -43,6 +51,7 @@
                     TextAlignment="Right" 
                     Background="Transparent" 
                     BorderThickness="0" 
+                    IsTabStop="False"
                     IsReadOnly="True" 
                     IsReadOnlyCaretVisible="False"
                     />

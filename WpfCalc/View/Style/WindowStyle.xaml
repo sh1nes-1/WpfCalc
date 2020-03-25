@@ -183,8 +183,10 @@
                                             </Button>
                                         </Grid>
                                     </Border>
-                                    
-                                    <ContentPresenter />
+
+                                    <AdornerDecorator>
+                                        <ContentPresenter/>
+                                    </AdornerDecorator>
                                 </DockPanel>
                             </Border>
                         </Grid>
